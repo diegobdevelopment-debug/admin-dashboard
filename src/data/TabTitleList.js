@@ -625,7 +625,6 @@ export const FashionOneSettingTitle = [
   { title: "Banner", icon: <RiRecordCircleLine /> },
   { title: "CategoryProduct", icon: <RiRecordCircleLine /> },
   { title: "Services", icon: <RiRecordCircleLine /> },
-  { title: "FeaturedBlogs", icon: <RiRecordCircleLine /> },
   { title: "SocialMedia ", icon: <RiRecordCircleLine /> },
 ];
 

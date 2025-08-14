@@ -89,9 +89,6 @@ const AllTabsFashionOne = forwardRef(({ activeTab, values, setFieldValue, apiDat
           <ServicesTab values={values} setFieldValue={setFieldValue} />
         </TabPane>
         <TabPane tabId="7">
-          <FeaturedBlogTab blogData={blogData} setSearch={setSearch} />
-        </TabPane>
-        <TabPane tabId="8">
           <SocialMediaTab values={values} setFieldValue={setFieldValue} />
         </TabPane>
       </TabContent>
