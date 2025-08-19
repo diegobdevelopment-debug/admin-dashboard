@@ -3,9 +3,7 @@ import { Col, TabContent, TabPane } from "reactstrap";
 import request from "@/utils/axiosUtils";
 import { product } from "@/utils/axiosUtils/API";
 import Loader from "@/components/commonComponent/Loader";
-import BannerTab from "./fashionOneTabs/BannerTab";
 import CategoryProductTab from "./fashionOneTabs/CategoryProductTab";
-import FeaturedBlogTab from "./fashionOneTabs/FeaturedBlogTab ";
 import HomeBannerTab from "./fashionOneTabs/HomeBannerTab";
 import OfferBannerTab from "./fashionOneTabs/OfferBannerTab";
 import ProductList1Tab from "./fashionOneTabs/ProductList1Tab";
@@ -80,18 +78,12 @@ const AllTabsFashionOne = forwardRef(({ activeTab, values, setFieldValue, apiDat
           <ProductList1Tab productData={productData} setSearch={setSearch} />
         </TabPane>
         <TabPane tabId="4">
-          <BannerTab values={values} setFieldValue={setFieldValue} categoryData={categoryData} productData={productData} setSearch={setSearch} />
-        </TabPane>
-        <TabPane tabId="5">
           <CategoryProductTab categoryData={categoryData} setSearch={setSearch} setFieldValue={setFieldValue} values={values} />
         </TabPane>
-        <TabPane tabId="6">
+        <TabPane tabId="5">
           <ServicesTab values={values} setFieldValue={setFieldValue} />
         </TabPane>
-        <TabPane tabId="7">
-          <FeaturedBlogTab blogData={blogData} setSearch={setSearch} />
-        </TabPane>
-        <TabPane tabId="8">
+        <TabPane tabId="6">
           <SocialMediaTab values={values} setFieldValue={setFieldValue} />
         </TabPane>
       </TabContent>
