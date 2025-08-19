@@ -4,7 +4,6 @@ import request from "@/utils/axiosUtils";
 import { product } from "@/utils/axiosUtils/API";
 import Loader from "@/components/commonComponent/Loader";
 import CategoryProductTab from "./fashionOneTabs/CategoryProductTab";
-import FeaturedBlogTab from "./fashionOneTabs/FeaturedBlogTab ";
 import HomeBannerTab from "./fashionOneTabs/HomeBannerTab";
 import OfferBannerTab from "./fashionOneTabs/OfferBannerTab";
 import ProductList1Tab from "./fashionOneTabs/ProductList1Tab";
