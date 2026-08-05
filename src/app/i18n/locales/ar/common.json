@@ -144,7 +144,6 @@
   "CategoriesAndProduct": "الفئات والمنتج",
   "CategoryIconList": "قائمة أيقونات الفئة",
   "ColumnBannersProduct": "بانرات الأعمدة المنتجة",
-
   "WelcomeToStore": "مرحبًا بك في المتجر",
   "LogInYourAccount": "تسجيل الدخول إلى حسابك",
   "Login": "تسجيل الدخول",
@@ -1206,5 +1205,7 @@
   "AddValue": "إضافة قيمة",
   "Testemail": "اختبار البريد الإلكتروني",
   "MeasurementId": "معرّف القياس",
-  "SortBydesc": "الترتيب حسب التنازلي"
+  "SortBydesc": "الترتيب حسب التنازلي",
+  "PleaseCompleteRequiredFields": "يرجى إكمال الحقول المطلوبة",
+  "Variant": "متغير"
 }

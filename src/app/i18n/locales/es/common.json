@@ -148,7 +148,6 @@
   "CategoriesAndProduct": "Categorías y Producto",
   "CategoryIconList": "Lista de Iconos de Categoría",
   "ColumnBannersProduct": "Banners de Columna de Producto",
-
   "WelcomeToStore": "Bienvenido a la tienda",
   "LogInYourAccount": "Inicia sesión en tu cuenta",
   "Login": "Iniciar sesión",
@@ -1232,5 +1231,7 @@
   "SaveAsPreset": "Guardar como preset",
   "NoThumbnail": "Sin miniatura",
   "InUse": "En uso",
-  "InUseCannotDelete": "Este archivo está siendo usado por un producto, ajuste, opción de tema o preset y no puede eliminarse."
+  "InUseCannotDelete": "Este archivo está siendo usado por un producto, ajuste, opción de tema o preset y no puede eliminarse.",
+  "PleaseCompleteRequiredFields": "Por favor completa los campos requeridos",
+  "Variant": "Variante"
 }

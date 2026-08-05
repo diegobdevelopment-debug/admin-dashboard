@@ -144,7 +144,6 @@
   "CategoriesAndProduct": "Catégories & Produit",
   "CategoryIconList": "Liste d'Icônes de Catégories",
   "ColumnBannersProduct": "Bannières de Colonne Produit",
-
   "WelcomeToStore": "Bienvenue dans la boutique",
   "LogInYourAccount": "Connectez-vous à votre compte",
   "Login": "Connexion",
@@ -1228,5 +1227,7 @@
   "SaveAsPreset": "Enregistrer comme préréglage",
   "NoThumbnail": "Pas de miniature",
   "InUse": "Utilisé",
-  "InUseCannotDelete": "Cette pièce jointe est référencée par un produit, un paramètre, une option de thème ou un préréglage et ne peut pas être supprimée."
+  "InUseCannotDelete": "Cette pièce jointe est référencée par un produit, un paramètre, une option de thème ou un préréglage et ne peut pas être supprimée.",
+  "PleaseCompleteRequiredFields": "Veuillez remplir les champs obligatoires",
+  "Variant": "Variante"
 }
