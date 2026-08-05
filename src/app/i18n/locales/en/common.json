@@ -4,7 +4,6 @@
   "EnterDescription(optional)": "Enter Description (optional)",
   "DigitalDownloadSettings": "Digital Download Settings",
   "EditCurrency": "Edit Currency",
-
   "Thedescriptionmustbeatleast10characters.": "The description must be at least 10 characters",
   "WelcomeBackAdmin": "Welcome Back Admin",
   "ManageApplication'sDataAndOperationsWithRealTimeAnalytics,UserManagementToolsAndCustomizableReports": "Manage application's data and operations with real time analytics, user management tools and customizable reports",
@@ -60,7 +59,6 @@
   "LayoutVariation": "Layout Variation",
   "CategoryProduct1": "Category Products 1",
   "GridBanner": "Grid Banner",
-
   "DetailsSection": "Details Section",
   "ParallaxProduct": "Parallax Product",
   "AboutBanner": "About Banner",
@@ -156,7 +154,6 @@
   "CategoriesAndProduct": "Categories & Product",
   "CategoryIconList": "Category Icon List",
   "ColumnBannersProduct": "Column Banners Product",
-
   "WelcomeToStore": "Welcome To Store",
   "LogInYourAccount": "Log In Your Account",
   "Login": "Log In",
@@ -1245,5 +1242,7 @@
   "SaveAsPreset": "Save as preset",
   "NoThumbnail": "No thumbnail",
   "InUse": "In use",
-  "InUseCannotDelete": "This attachment is referenced by a product, setting, theme option or preset and cannot be deleted."
+  "InUseCannotDelete": "This attachment is referenced by a product, setting, theme option or preset and cannot be deleted.",
+  "PleaseCompleteRequiredFields": "Please complete the required fields",
+  "Variant": "Variant"
 }

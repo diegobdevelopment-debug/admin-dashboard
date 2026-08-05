@@ -33,8 +33,8 @@ const VariationsTab = ({ values, setFieldValue, errors, updateId }) => {
     const variations_val = values['variations']
 
     values['variation_options']?.map((opt, ind) => {
-      const att_vals = opt.map((val) => val.value)
-      let variant_val = variations_val.find(({ attribute_values }) => attribute_values?.every(({ value }) => att_vals.includes(value)));
+      const att_vals = opt.filter(Boolean).map((val) => val?.value)
+      let variant_val = variations_val.find(({ attribute_values }) => attribute_values?.filter(Boolean).every(({ value }) => att_vals.includes(value)));
       const addObject = { stock_status: 'in_stock', status: true }
       if (values.product_type === "digital") {
         addObject.is_licensable = false;

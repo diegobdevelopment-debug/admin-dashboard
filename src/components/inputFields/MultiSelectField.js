@@ -25,7 +25,9 @@ const MultiSelectField = ({ setFieldValue, values, name, getValuesKey = "id", da
   useEffect(() => {
     setSelectedItems();
     SelectedItemFunction(data && data);
-  }, [values?.[name]]);
+    // `data` is in the deps so already-saved selections render once the
+    // options finish loading (on edit pages the query resolves after mount).
+  }, [values?.[name], data]);
   return (
     <div className="category-select-box" ref={ref}>
       <MultiSelectInput initialTittle={initialTittle} values={values} name={name} data={data} selectedItems={selectedItems} setIsComponentVisible={setIsComponentVisible} setFieldValue={setFieldValue} setSelectedItems={setSelectedItems} errors={errors} getValuesKey={getValuesKey} />
