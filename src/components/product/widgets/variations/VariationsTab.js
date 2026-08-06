@@ -35,7 +35,9 @@ const VariationsTab = ({ values, setFieldValue, errors, updateId }) => {
     values['variation_options']?.map((opt, ind) => {
       const att_vals = opt.filter(Boolean).map((val) => val?.value)
       let variant_val = variations_val.find(({ attribute_values }) => attribute_values?.filter(Boolean).every(({ value }) => att_vals.includes(value)));
-      const addObject = { stock_status: 'in_stock', status: true }
+      // Pre-fill the variant name from its attribute combination ("S / Negro")
+      // so the user doesn't have to type it for every generated variant.
+      const addObject = { name: att_vals.join(' / '), stock_status: 'in_stock', status: true }
       if (values.product_type === "digital") {
         addObject.is_licensable = false;
         addObject.digital_file_ids = []
