@@ -1244,5 +1244,14 @@
   "InUse": "In use",
   "InUseCannotDelete": "This attachment is referenced by a product, setting, theme option or preset and cannot be deleted.",
   "PleaseCompleteRequiredFields": "Please complete the required fields",
-  "Variant": "Variant"
+  "Variant": "Variant",
+  "WhatsApp": "WhatsApp",
+  "ShowWhatsAppButton": "Show WhatsApp button",
+  "ShowWhatsAppButtonHelp": "*Shows a floating WhatsApp button on the storefront home page.",
+  "WhatsAppNumber": "WhatsApp number",
+  "WhatsAppNumberHelp": "*Include the country code, e.g. +57 300 123 4567. Spaces and symbols are ignored.",
+  "WhatsAppMessage": "Prefilled message",
+  "WhatsAppMessagePlaceholder": "Hi! I'd like more information about your products.",
+  "WhatsAppMessageHelp": "*Optional. Text the customer's chat opens with.",
+  "TestEmailAddress": "Test email address"
 }
