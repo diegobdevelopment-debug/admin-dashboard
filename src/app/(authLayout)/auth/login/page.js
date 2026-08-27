@@ -36,7 +36,11 @@ const Login = () => {
         setShowBoxMessage(res?.response?.data?.message || "Invalid credentials");
       }
     } catch (err) {
-      setShowBoxMessage("Login failed. Please try again.");
+      // Surface the real reason (invalid credentials, captcha, rate limit)
+      // instead of a generic message; fall back to a network hint.
+      const apiMessage = err?.response?.data?.message;
+      const noResponse = err?.request && !err?.response;
+      setShowBoxMessage(apiMessage || (noResponse ? "Cannot reach the API — is it running?" : "Login failed. Please try again."));
     } finally {
       setSubmitting(false);
     }
@@ -60,8 +64,8 @@ const Login = () => {
         <div className="input-box">
           <Formik
             initialValues={{
-              email: "admin@xdope.com",
-              password: "Admin@123",
+              email: "",
+              password: "",
             }}
             validationSchema={YupObject({
               email: emailSchema,
