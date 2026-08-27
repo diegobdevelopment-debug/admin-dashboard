@@ -36,6 +36,11 @@ const TableWrapper = (WrappedComponent) => {
       { refetchOnWindowFocus: false, gcTime: 0 }
     );
 
+    // Row delete for every table using this wrapper: DELETE {url}/{id}, then
+    // refresh the list. Without this, the delete confirmation's "Yes" button
+    // had no mutation to call and silently did nothing.
+    const { mutate: deleteRowMutate } = useDelete(url, false, () => refetch());
+
     // To use this function in parent
     useImperativeHandle(ref, () => ({
       call() {
