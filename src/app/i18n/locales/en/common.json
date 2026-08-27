@@ -1253,5 +1253,9 @@
   "WhatsAppMessage": "Prefilled message",
   "WhatsAppMessagePlaceholder": "Hi! I'd like more information about your products.",
   "WhatsAppMessageHelp": "*Optional. Text the customer's chat opens with.",
-  "TestEmailAddress": "Test email address"
+  "TestEmailAddress": "Test email address",
+  "Failed": "Failed",
+  "SomethingWentWrong": "Something went wrong",
+  "CopyImagesToSameColor": "Use these images for all sizes of this color",
+  "CopyImagesToAllVariations": "Use these images for all variations"
 }
