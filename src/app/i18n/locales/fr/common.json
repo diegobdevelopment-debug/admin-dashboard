@@ -1229,5 +1229,9 @@
   "InUse": "Utilisé",
   "InUseCannotDelete": "Cette pièce jointe est référencée par un produit, un paramètre, une option de thème ou un préréglage et ne peut pas être supprimée.",
   "PleaseCompleteRequiredFields": "Veuillez remplir les champs obligatoires",
-  "Variant": "Variante"
+  "Variant": "Variante",
+  "Failed": "Échoués",
+  "SomethingWentWrong": "Une erreur est survenue",
+  "CopyImagesToSameColor": "Utiliser ces images pour toutes les tailles de cette couleur",
+  "CopyImagesToAllVariations": "Utiliser ces images pour toutes les variantes"
 }

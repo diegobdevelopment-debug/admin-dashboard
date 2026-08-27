@@ -18,6 +18,10 @@ const TableWrapper = (WrappedComponent) => {
     const [date, setDate] = useState([{ startDate: null, endDate: null, key: "selection" }]);
     const [sortBy, setSortBy] = useState({ field: "", sort: "asc" });
     let ifParamsData = paramsProps ? Object.keys(paramsProps)[0] : "";
+    // Row-level delete for every table: DELETE {url}/{id}, then refetch the
+    // list. Passed down as `mutate` (ShowTable → Options → DeleteButton).
+    const { mutate: deleteRow } = useDelete(url, url, () => refetch());
+
     const { data, isLoading, refetch, fetchStatus } = useCustomQuery(
       [url],
       () =>
@@ -64,7 +68,7 @@ const TableWrapper = (WrappedComponent) => {
             <TableTitle moduleName={moduleName} type={type} onlyTitle={onlyTitle} filterHeader={filterHeader} importExport={importExport} refetch={refetch} />
             {(filterHeader?.noPageDrop !== true || filterHeader?.noSearch !== true) && <TableTop setPaginate={setPaginate} setSearch={setSearch} paginate={paginate} isCheck={isCheck} setIsCheck={setIsCheck} url={url} isReplicate={isReplicate} refetch={refetch} dateRange={dateRange} date={date} setDate={setDate} filterHeader={filterHeader} keyInPermission={keyInPermission} />}
             <div className="table-responsive border-table">
-              <WrappedComponent mutate={deleteRowMutate} data={userIdParams ? data?.data : data?.data?.data} sortBy={sortBy} setSortBy={setSortBy} moduleName={moduleName} type={type} current_page={userIdParams ? data?.data?.transactions?.current_page : data?.data?.current_page} per_page={userIdParams ? data?.data?.transactions?.per_page : data?.data?.per_page} url={url} userIdParams={userIdParams} fetchStatus={fetchStatus} refetch={refetch} isCheck={isCheck} setIsCheck={setIsCheck} {...props} keyInPermission={keyInPermission} />
+              <WrappedComponent mutate={deleteRow} data={userIdParams ? data?.data : data?.data?.data} sortBy={sortBy} setSortBy={setSortBy} moduleName={moduleName} type={type} current_page={userIdParams ? data?.data?.transactions?.current_page : data?.data?.current_page} per_page={userIdParams ? data?.data?.transactions?.per_page : data?.data?.per_page} url={url} userIdParams={userIdParams} fetchStatus={fetchStatus} refetch={refetch} isCheck={isCheck} setIsCheck={setIsCheck} {...props} keyInPermission={keyInPermission} />
             </div>
           </CardBody>
           {filterHeader?.noPagination !== true && <TableBottom current_page={userIdParams ? data?.data?.transactions?.current_page : data?.data?.current_page} total={userIdParams ? data?.data?.transactions?.total : data?.data?.total} per_page={userIdParams ? data?.data?.transactions?.per_page : data?.data?.per_page} setPage={setPage} />}

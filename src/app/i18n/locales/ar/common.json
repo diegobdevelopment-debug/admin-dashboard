@@ -1207,5 +1207,9 @@
   "MeasurementId": "معرّف القياس",
   "SortBydesc": "الترتيب حسب التنازلي",
   "PleaseCompleteRequiredFields": "يرجى إكمال الحقول المطلوبة",
-  "Variant": "متغير"
+  "Variant": "متغير",
+  "Failed": "فشل",
+  "SomethingWentWrong": "حدث خطأ ما",
+  "CopyImagesToSameColor": "استخدام هذه الصور لجميع مقاسات هذا اللون",
+  "CopyImagesToAllVariations": "استخدام هذه الصور لجميع المتغيرات"
 }

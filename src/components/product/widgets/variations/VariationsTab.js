@@ -28,6 +28,18 @@ const VariationsTab = ({ values, setFieldValue, errors, updateId }) => {
   useEffect(() => {
     getNewVariations()
   }, [values["variation_options"]]);
+  // Label in the order the attributes were configured (Color first, then
+  // Talla): "Blanco Marfil/S". Used to prefill variation name and SKU.
+  const orderedLabel = (opt) => {
+    const parts = (opt || []).filter(Boolean);
+    if (!parts.length || !parts.every((v) => v?.value)) return "";
+    const attrOrder = (values["combination"] || []).map((c) => c?.name?.id);
+    return [...parts]
+      .sort((a, b) => attrOrder.indexOf(a.attribute_id) - attrOrder.indexOf(b.attribute_id))
+      .map((v) => v.value)
+      .join("/");
+  };
+
   const getNewVariations = () => {
     let temp_variations = []
     const variations_val = values['variations']
@@ -35,9 +47,15 @@ const VariationsTab = ({ values, setFieldValue, errors, updateId }) => {
     values['variation_options']?.map((opt, ind) => {
       const att_vals = opt.filter(Boolean).map((val) => val?.value)
       let variant_val = variations_val.find(({ attribute_values }) => attribute_values?.filter(Boolean).every(({ value }) => att_vals.includes(value)));
-      // Pre-fill the variant name from its attribute combination ("S / Negro")
-      // so the user doesn't have to type it for every generated variant.
-      const addObject = { name: att_vals.join(' / '), stock_status: 'in_stock', status: true }
+      const addObject = { stock_status: 'in_stock', status: true }
+      // Prefill name and SKU for freshly generated variants:
+      // name = "Blanco Marfil/S", sku = "<productname>_Blanco Marfil/S".
+      const label = orderedLabel(opt);
+      if (label) {
+        addObject.name = label;
+        const productSlug = (values["name"] || "").trim().toLowerCase().replace(/\s+/g, "");
+        if (productSlug) addObject.sku = `${productSlug}_${label}`;
+      }
       if (values.product_type === "digital") {
         addObject.is_licensable = false;
         addObject.digital_file_ids = []

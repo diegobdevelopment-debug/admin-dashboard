@@ -51,20 +51,22 @@ export function flattenProductErrors(errors, t = (x) => x) {
  * form looks like it "did nothing".
  */
 const ValidationErrorNotifier = () => {
-  const { submitCount, isValid, errors } = useFormikContext();
+  const { submitCount, isValid, isValidating, errors } = useFormikContext();
   const { t } = useTranslation("common");
   const lastNotified = useRef(0);
 
   useEffect(() => {
-    if (submitCount > lastNotified.current && !isValid) {
-      lastNotified.current = submitCount;
+    // Formik reports an empty error bag briefly while validating; acting on
+    // that window would swallow the toast.
+    if (isValidating || submitCount === 0 || submitCount === lastNotified.current) return;
+    lastNotified.current = submitCount;
+    if (!isValid) {
       const fields = flattenProductErrors(errors, t);
       const shown = fields.slice(0, 6).join(" · ");
       const more = fields.length > 6 ? ` (+${fields.length - 6})` : "";
       ToastNotification("error", `${t("PleaseCompleteRequiredFields")}: ${shown}${more}`);
     }
-    if (isValid) lastNotified.current = submitCount;
-  }, [submitCount, isValid, errors]);
+  }, [submitCount, isValid, isValidating, errors]);
 
   return null;
 };
