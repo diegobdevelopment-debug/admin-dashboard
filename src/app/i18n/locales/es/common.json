@@ -1242,5 +1242,9 @@
   "WhatsAppMessage": "Mensaje predefinido",
   "WhatsAppMessagePlaceholder": "¡Hola! Quisiera más información sobre sus productos.",
   "WhatsAppMessageHelp": "*Opcional. Texto con el que se abre el chat del cliente.",
-  "TestEmailAddress": "Correo de prueba"
+  "TestEmailAddress": "Correo de prueba",
+  "Failed": "Fallaron",
+  "SomethingWentWrong": "Algo salió mal",
+  "CopyImagesToSameColor": "Usar estas imágenes para todas las tallas de este color",
+  "CopyImagesToAllVariations": "Usar estas imágenes para todas las variaciones"
 }
