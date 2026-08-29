@@ -5,7 +5,7 @@ import Btn from "@/elements/buttons/Btn";
 import SettingContext from "@/helper/settingContext";
 import LoginBoxWrapper from "@/utils/hoc/LoginBoxWrapper";
 import { YupObject, emailSchema, nameSchema } from "@/utils/validation/ValidationSchemas";
-import request from "@/utils/axiosUtils";
+import request, { saveSession } from "@/utils/axiosUtils";
 import { login } from "@/utils/axiosUtils/API";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import Image from "next/image";
@@ -26,15 +26,21 @@ const Login = () => {
     try {
       const res = await request({ url: login, method: "post", data: values });
       if (res?.status === 200 || res?.status === 201) {
-        const token = res.data?.access_token || res.data?.token;
-        Cookies.set("uat", token, { path: "/", expires: 7 });
+        // saveSession stores both uat (access) and urt (refresh) cookies via
+        // the axios util. Both apps share the same key names so the refresh
+        // interceptor picks up the right token automatically.
+        saveSession(res.data || {});
         Cookies.set("account", JSON.stringify(res.data?.data || {}));
         router.push("/dashboard");
       } else {
         setShowBoxMessage(res?.response?.data?.message || "Invalid credentials");
       }
     } catch (err) {
-      setShowBoxMessage("Login failed. Please try again.");
+      // Surface the real reason (invalid credentials, captcha, rate limit)
+      // instead of a generic message; fall back to a network hint.
+      const apiMessage = err?.response?.data?.message;
+      const noResponse = err?.request && !err?.response;
+      setShowBoxMessage(apiMessage || (noResponse ? "Cannot reach the API — is it running?" : "Login failed. Please try again."));
     } finally {
       setSubmitting(false);
     }
@@ -58,8 +64,8 @@ const Login = () => {
         <div className="input-box">
           <Formik
             initialValues={{
-              email: "admin@xdope.com",
-              password: "Admin@123",
+              email: "",
+              password: "",
             }}
             validationSchema={YupObject({
               email: emailSchema,

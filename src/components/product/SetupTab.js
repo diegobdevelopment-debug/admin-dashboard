@@ -91,7 +91,8 @@ const SetupTab = ({ values, setFieldValue, errors, updateId }) => {
 
       <SimpleInputField nameList={[{ name: "unit", title: "Unit", placeholder: t("Enter Unit"), helpertext: "*Specify the measurement unit, such as 10 Pieces, 1 KG, 1 Ltr, etc." }]} />
 
-      <MultiSelectField errors={errors} values={values} setFieldValue={setFieldValue} name="tags" data={tagData || []} />
+      {/* Product tags are stored as name strings on the API, so match/store by name */}
+      <MultiSelectField errors={errors} values={values} setFieldValue={setFieldValue} name="tags" getValuesKey="name" data={tagData || []} />
 
       <MultiSelectField errors={errors} values={values} setFieldValue={setFieldValue} name="categories" require="true" data={categoryData || []} />
 

@@ -6,7 +6,10 @@
     "dev": "next dev -p 3000",
     "build": "next build",
     "start": "next start -p 3000",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:headed": "playwright test --headed"
   },
   "overrides": {
     "resolve-url-loader": "^5.0.0",
@@ -29,7 +32,7 @@
     "i18next-resources-to-backend": "^1.2.1",
     "jodit-react": "^5.2.19",
     "js-cookie": "^3.0.5",
-    "next": "^15.2.0",
+    "next": "^15.5.0",
     "nextjs-toploader": "^3.7.15",
     "react": "^19.0.0",
     "react-apexcharts": "^1.7.0",
@@ -50,8 +53,9 @@
     "yup": "0.32.11"
   },
   "devDependencies": {
+    "@playwright/test": "^1.61.1",
     "eslint": "^8",
-    "eslint-config-next": "^14.2.1",
+    "eslint-config-next": "^15.5.0",
     "sass": "1.77.6"
   }
 }

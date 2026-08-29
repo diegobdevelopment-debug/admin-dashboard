@@ -71,6 +71,7 @@ export const shippingRule = "/shippingRule";
 // setting api
 export const setting = "/settings";
 export const updateSetting = "/settings";
+export const testEmailAPI = "/settings/test-email";
 
 // setting api
 export const checkout = "/checkout";
@@ -167,4 +168,8 @@ export const NoticeRecent = "/notice/recent";
 
 export const AppSettingsApi = "/app/settings";
 
-export const sortMenu = '/menu/sort' 
+export const sortMenu = '/menu/sort'
+
+// Presets — save/restore Setting & ThemeOption snapshots for seasonal themes.
+export const PresetAPI = '/presets';
+export const PresetApplyAPI = (id) => `/presets/${id}/apply`;

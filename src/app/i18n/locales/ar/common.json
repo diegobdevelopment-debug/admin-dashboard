@@ -144,7 +144,6 @@
   "CategoriesAndProduct": "الفئات والمنتج",
   "CategoryIconList": "قائمة أيقونات الفئة",
   "ColumnBannersProduct": "بانرات الأعمدة المنتجة",
-
   "WelcomeToStore": "مرحبًا بك في المتجر",
   "LogInYourAccount": "تسجيل الدخول إلى حسابك",
   "Login": "تسجيل الدخول",
@@ -1206,5 +1205,23 @@
   "AddValue": "إضافة قيمة",
   "Testemail": "اختبار البريد الإلكتروني",
   "MeasurementId": "معرّف القياس",
-  "SortBydesc": "الترتيب حسب التنازلي"
+  "SortBydesc": "الترتيب حسب التنازلي",
+  "PleaseCompleteRequiredFields": "يرجى إكمال الحقول المطلوبة",
+  "Variant": "متغير",
+  "Failed": "فشل",
+  "SomethingWentWrong": "حدث خطأ ما",
+  "CopyImagesToSameColor": "استخدام هذه الصور لجميع مقاسات هذا اللون",
+  "CopyImagesToAllVariations": "استخدام هذه الصور لجميع المتغيرات",
+  "TermsAndConditions": "الشروط والأحكام",
+  "PrivacyPolicy": "سياسة الخصوصية",
+  "SocialNetworks": "شبكات التواصل",
+  "ShippingZones": "مناطق الشحن (حسب المدينة)",
+  "ShippingZonesHelp": "المنطقة 1 = المدن الرئيسية؛ المنطقة 2 = بقية البلاد.",
+  "Zone1Rate": "تعرفة المنطقة 1 — المدن الرئيسية",
+  "Zone1RateHelp": "العواصم والمناطق الحضرية",
+  "Zone2Rate": "تعرفة المنطقة 2 — بقية البلاد",
+  "Zone2RateHelp": "أي مدينة خارج المنطقة 1",
+  "FreeShippingThreshold": "شحن مجاني اعتباراً من",
+  "FreeShippingThresholdHelp": "0 يعطل الشحن المجاني.",
+  "ShippingZonesSaved": "تم حفظ مناطق الشحن"
 }
